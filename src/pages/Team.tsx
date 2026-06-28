@@ -5,24 +5,38 @@ import { Icon } from "../components/Icon";
 
 const team = [
   {
-    n: "M Skathi Sadhana",
-    r: "Managing Director",
-    role: "Director",
-    img: "/coat photo.webp",
-  },
-  {
     n: "D Ranjith",
     r: "Lead Developer",
-    role: "Tech Lead",
     img: "/ranjith.webp",
     featured: true,
   },
   {
     n: "S Periya Samy",
     r: "Business Development Executive",
-    role: "Strategy",
     img: "/periyasamy.webp",
   },
+  {
+    n: "B Uma Magesh ",
+    r: "Software Developer",
+    img: "/uma.jpeg",
+  },
+  {
+    n: "K S Abineshwaran",
+    r: "Digital Marketing",
+    img: "/abi.jpeg",
+  },
+  {
+    n: "R Sanjay",
+    r: "SEO Analyst",
+    img: "/sanjay.jpeg",
+  },
+   {
+    n: "M Skathi Sadhana",
+    r: "Graphic Designer",
+    role: "Director",
+    img: "/coat photo.webp",
+  },
+
 ];
 
 export default function Team() {
@@ -53,8 +67,6 @@ export default function Team() {
                     <img src={m.img} alt={m.n} />
                   </div>
 
-                  {/* Role Badge */}
-                  <span className="team-role">{m.role}</span>
 
                   {/* Name */}
                   <h4>{m.n}</h4>
@@ -64,24 +76,6 @@ export default function Team() {
 
                   {/* Accent Divider */}
                   <div className="team-divider" />
-
-                  {/* Social Icons */}
-                  <div className="team-socials">
-                    <a
-                      href="mailto:info@gen6software.in"
-                      aria-label="Send email"
-                    >
-                      <Icon name="mail" size={16} />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="LinkedIn profile"
-                    >
-                      <Icon name="linkedin" size={16} />
-                    </a>
-                  </div>
 
                 </div>
               </Reveal>
