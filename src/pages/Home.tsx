@@ -289,49 +289,52 @@ const filteredProjects =
 {/* SERVICES */}
 <section id="services" className="section-alt">
   <div className="container">
-    
+
     <div className="section-head">
       <span className="eyebrow">What We Do</span>
-      <h2 className="section-title">Services built for modern teams</h2>
+
+      <h2 className="section-title">
+        Services Built for Modern Businesses
+      </h2>
+
       <p className="section-subtitle">
-        End-to-end product capabilities, from research to release and beyond.
+        End-to-end digital solutions, from planning and design to development,
+        deployment, and ongoing support.
       </p>
     </div>
 
     <div className="services-grid">
       {services.map((s, i) => (
         <Reveal key={s.id} delay={(i % 3) * 100}>
-          
           <div className="service-card">
-            
-            {/* ICON */}
+
+            {/* Icon */}
             <div className="ic">
               <Icon name={s.ic} />
             </div>
 
-            {/* TITLE */}
+            {/* Title */}
             <h3>{s.t}</h3>
 
-            {/* DESCRIPTION */}
+            {/* Description */}
             <p>{s.d}</p>
 
-            {/* 🔥 ROUTER LINK */}
+            {/* Learn More */}
             <Link
-             to={`/service-details?id=${s.id}`}
-             className="learn-more"
+              to={`/services/${s.id}`}
+              className="learn-more"
             >
-              Learn more <Icon name="arrow" size={14}/>
+              Learn More
+              <Icon name="arrow" size={14} />
             </Link>
 
           </div>
-
         </Reveal>
       ))}
     </div>
 
   </div>
 </section>
-
         {/* EXPERIENCE */}
         <section>
           <div className="container">
