@@ -1,42 +1,45 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
-import { Icon } from "../components/Icon";
 
 const team = [
   {
+    id: 1,
     n: "D Ranjith",
     r: "Lead Developer",
     img: "/ranjith.webp",
     featured: true,
   },
   {
+    id: 2,
     n: "S Periya Samy",
     r: "Business Development Executive",
     img: "/periyasamy.webp",
   },
   {
-    n: "B Uma Magesh ",
+    id: 3,
+    n: "B Uma Magesh",
     r: "Software Developer",
     img: "/uma.jpeg",
   },
   {
+    id: 4,
     n: "K S Abineshwaran",
     r: "Digital Marketing",
     img: "/abi.jpeg",
   },
   {
+    id: 5,
     n: "R Sanjay",
     r: "SEO Analyst",
     img: "/sanjay.jpeg",
   },
-   {
-    n: "M Skathi Sadhana",
+  {
+    id: 6,
+    n: "M Sakthi Sadhana",
     r: "Graphic Designer",
-    role: "Director",
     img: "/coat photo.webp",
   },
-
 ];
 
 export default function Team() {
@@ -46,8 +49,7 @@ export default function Team() {
 
       <section className="section-alt" id="team">
         <div className="container">
-
-          {/* ── Section Header ── */}
+          {/* Section Header */}
           <div className="section-head">
             <span className="eyebrow">Our Team</span>
             <h2 className="section-title">Meet the people behind Gen6</h2>
@@ -56,32 +58,32 @@ export default function Team() {
             </p>
           </div>
 
-          {/* ── Team Grid ── */}
+          {/* Team Grid */}
           <div className="team-grid">
-            {team.map((m, i) => (
-              <Reveal key={m.n} delay={i * 80}>
-                <div className={`team-card${m.featured ? " featured" : ""}`}>
-
-                  {/* Circular Photo */}
+            {team.map((member, index) => (
+              <Reveal key={member.id} delay={index * 80}>
+                <div
+                  className={`team-card${
+                    member.featured ? " featured" : ""
+                  }`}
+                >
                   <div className="team-img">
-                    <img src={m.img} alt={m.n} />
+                    <img
+                      src={member.img}
+                      alt={member.n}
+                      loading="lazy"
+                    />
                   </div>
 
+                  <h4>{member.n}</h4>
 
-                  {/* Name */}
-                  <h4>{m.n}</h4>
+                  <p className="team-designation">{member.r}</p>
 
-                  {/* Designation */}
-                  <p className="team-designation">{m.r}</p>
-
-                  {/* Accent Divider */}
-                  <div className="team-divider" />
-
+                  <div className="team-divider"></div>
                 </div>
               </Reveal>
             ))}
           </div>
-
         </div>
       </section>
 
