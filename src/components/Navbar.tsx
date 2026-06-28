@@ -5,115 +5,152 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
-  // ✅ Smooth scroll function
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-    setOpen(false);
-  };
-
   return (
     <header className="navbar">
       <div className="container nav-inner">
 
         {/* LOGO */}
-        <Link to="/" className="logo" onClick={() => scrollToSection("home")}>
+        <Link to="/" className="logo" onClick={() => setOpen(false)}>
+          <img
+            src="/logo.png"
+            alt="Gen6 Software Logo"
+            className="logo-img"
+          />
 
-  {/* ✅ Logo Image */}
-<img
-  src="/logo.png"
-  alt="Gen6 Software Logo"
-  className="logo-img"
-/>
+          <span className="logo-text">
+            Gen6 Software
+          </span>
+        </Link>
 
-  {/* ✅ Styled Text */}
-  <span className="logo-text">
-    Gen6 Software
-  </span>
+        {/* NAVIGATION */}
+        <nav className={`nav-links ${open ? "open" : ""}`}>
 
-</Link>
+          <Link to="/" onClick={() => setOpen(false)}>
+            Home
+          </Link>
 
-        {/* NAV LINKS */}
-        <nav className={`nav-links ${open ? "open" : ""}`} aria-label="Main Navigation">
+          <Link to="/about" onClick={() => setOpen(false)}>
+            About
+          </Link>
 
-          <button onClick={() => scrollToSection("home")}>Home</button>
-          <button onClick={() => scrollToSection("about")}>About</button>
-          <button onClick={() => scrollToSection("portfolio")}>Portfolio</button>
-          <button onClick={() => scrollToSection("team")}>Team</button>
+          <Link to="/portfolio" onClick={() => setOpen(false)}>
+            Portfolio
+          </Link>
 
-          {/* 🔥 SERVICES DROPDOWN */}
+          <Link to="/team" onClick={() => setOpen(false)}>
+            Team
+          </Link>
+
+          {/* SERVICES DROPDOWN */}
           <div
             className="dropdown"
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
 
-            {/* MAIN BUTTON */}
-            <button
+            <Link
+              to="/services"
               className="dropdown-toggle"
-              onClick={() => scrollToSection("services")}
+              onClick={() => setOpen(false)}
             >
               Services ▾
-            </button>
+            </Link>
 
-            {/* DROPDOWN MENU */}
             <div className={`dropdown-menu ${servicesOpen ? "show" : ""}`}>
 
-              <Link to="/service-details?id=web-dev" onClick={() => setOpen(false)}>
+              <Link
+                to="/service-details?id=web-dev"
+                onClick={() => setOpen(false)}
+              >
                 Web Development
               </Link>
 
-              <Link to="/service-details?id=software" onClick={() => setOpen(false)}>
+              <Link
+                to="/service-details?id=software"
+                onClick={() => setOpen(false)}
+              >
                 Software Development
               </Link>
 
-              <Link to="/service-details?id=custom-software" onClick={() => setOpen(false)}>
+              <Link
+                to="/service-details?id=custom-software"
+                onClick={() => setOpen(false)}
+              >
                 Custom Software
               </Link>
 
-              <Link to="/service-details?id=ecommerce" onClick={() => setOpen(false)}>
+              <Link
+                to="/service-details?id=ecommerce"
+                onClick={() => setOpen(false)}
+              >
                 E-Commerce Solutions
               </Link>
-              
-              <Link to="/service-details?id=seo" onClick={() => setOpen(false)}>
+
+              <Link
+                to="/service-details?id=seo"
+                onClick={() => setOpen(false)}
+              >
                 SEO Optimization
               </Link>
 
-                <div className="sub-dropdown">
-    <span className="sub-title">Design ▸</span>
+              {/* SUB MENU */}
+              <div className="sub-dropdown">
 
-    <div className="sub-menu">
-      <Link to="/service-details?id=graphic-design">Graphic Design</Link>
-      <Link to="/service-details?id=poster-design">Poster Design</Link>
-      <Link to="/service-details?id=social-media">Social Media Design</Link>
-    </div>
-  </div>
+                <span className="sub-title">
+                  Design ▸
+                </span>
 
-              
+                <div className="sub-menu">
+
+                  <Link
+                    to="/service-details?id=graphic-design"
+                    onClick={() => setOpen(false)}
+                  >
+                    Graphic Design
+                  </Link>
+
+                  <Link
+                    to="/service-details?id=poster-design"
+                    onClick={() => setOpen(false)}
+                  >
+                    Poster Design
+                  </Link>
+
+                  <Link
+                    to="/service-details?id=social-media"
+                    onClick={() => setOpen(false)}
+                  >
+                    Social Media Design
+                  </Link>
+
+                </div>
+
+              </div>
 
             </div>
           </div>
 
-          <button onClick={() => scrollToSection("contact")}>Contact</button>
+          <Link to="/contact" onClick={() => setOpen(false)}>
+            Contact
+          </Link>
 
         </nav>
 
-        {/* CTA + HAMBURGER */}
+        {/* RIGHT SIDE */}
         <div className="nav-cta">
 
-          <button
+          <Link
+            to="/contact"
             className="btn btn-primary"
-            onClick={() => scrollToSection("contact")}
+            onClick={() => setOpen(false)}
           >
             Get Started
-          </button>
+          </Link>
 
           <button
             className="hamburger"
-            aria-label="Menu"
             onClick={() => setOpen(!open)}
+            aria-label="Menu"
           >
             <span />
             <span />

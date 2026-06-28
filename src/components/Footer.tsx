@@ -2,36 +2,34 @@ import { Icon } from "./Icon";
 import { Link } from "react-router-dom";
 
 export function Footer() {
-
-  // ✅ Smooth scroll (same as navbar)
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer className="footer">
       <div className="container">
 
         <div className="footer-grid">
 
-          {/* BRAND */}
+          {/* Brand */}
           <div className="footer-brand">
-<Link to="/" className="logo" onClick={() => scrollToSection("home")}>
-  <img src="/logo.png" alt="Gen6 Software" className="logo-img" />
-  <span className="logo-text">
-    Gen 6 Software
-  </span>
-</Link>
+
+            <Link to="/" className="logo">
+              <img
+                src="/logo.png"
+                alt="Gen6 Software"
+                className="logo-img"
+              />
+
+              <span className="logo-text">
+                Gen6 Software
+              </span>
+            </Link>
 
             <p>
-              Building modern digital products that move businesses forward —
-              from strategy to launch and beyond.
+              Building modern websites, custom software, AI solutions,
+              and digital products that help businesses grow.
             </p>
 
             <div className="socials">
+
               <a
                 href="https://www.linkedin.com/feed/update/urn:li:activity:7447581011179126784"
                 target="_blank"
@@ -47,64 +45,111 @@ export function Footer() {
               >
                 <Icon name="instagram" size={16} />
               </a>
+
             </div>
           </div>
 
-          {/* COMPANY */}
+          {/* Company */}
           <div className="footer-col">
+
             <h5>Company</h5>
+
             <ul>
 
               <li>
-                <button
-  onClick={() => scrollToSection("about")}
-  aria-label="Go to About section"
->
-                  About
-                </button>
+                <Link to="/about">About</Link>
               </li>
 
               <li>
-                <button onClick={() => scrollToSection("services")}>
-                  Services
-                </button>
+                <Link to="/services">Services</Link>
               </li>
 
               <li>
-                <button onClick={() => scrollToSection("portfolio")}>
-                  Projects
-                </button>
+                <Link to="/portfolio">Portfolio</Link>
               </li>
 
               <li>
-                <button onClick={() => scrollToSection("contact")}>
-                  Contact
-                </button>
+                <Link to="/team">Team</Link>
+              </li>
+
+              <li>
+                <Link to="/careers">Careers</Link>
+              </li>
+
+              <li>
+                <Link to="/contact">Contact</Link>
               </li>
 
             </ul>
+
           </div>
 
-          {/* SOLUTIONS */}
+          {/* Services */}
           <div className="footer-col">
-            <h5>Solutions</h5>
+
+            <h5>Services</h5>
+
             <ul>
-              <li><Link to="/service-details?id=web-dev">Web Development</Link></li>
-              <li><Link to="/service-details?id=software">Software Development</Link></li>
-              <li><Link to="/service-details?id=custom-software">Custom Software</Link></li>
-              <li><Link to="/service-details?id=ecommerce">E-Commerce Solutions</Link></li>
-              <li><Link to="/service-details?id=seo">SEO Optimization</Link></li>
-              <li><Link to="/service-details?id=graphic-design">Graphic Design</Link></li>
-<li><Link to="/service-details?id=poster-design">Poster Design</Link></li>
-<li><Link to="/service-details?id=social-media">Social Media Design</Link></li>
-              
+
+              <li>
+                <Link to="/service-details?id=web-dev">
+                  Web Development
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/service-details?id=software">
+                  Software Development
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/service-details?id=custom-software">
+                  Custom Software
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/service-details?id=ecommerce">
+                  E-Commerce
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/service-details?id=seo">
+                  SEO Optimization
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/service-details?id=graphic-design">
+                  Graphic Design
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/service-details?id=poster-design">
+                  Poster Design
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/service-details?id=social-media">
+                  Social Media Design
+                </Link>
+              </li>
+
             </ul>
+
           </div>
 
-          {/* CONTACT */}
+          {/* Contact */}
           <div className="footer-col">
+
             <h5>Contact</h5>
+
             <ul>
+
               <li>
                 <a href="mailto:gen6software@gmail.com">
                   gen6software@gmail.com
@@ -117,33 +162,26 @@ export function Footer() {
                 </a>
               </li>
 
-              {/* ✅ FIXED (no empty link) */}
               <li>
-                <span>Erode, Tamil Nadu 🇮🇳</span>
+                Komarapalayam,
+                <br />
+                Namakkal,
+                Tamil Nadu
               </li>
+
             </ul>
+
           </div>
 
         </div>
 
-        {/* BOTTOM */}
         <div className="footer-bottom">
-          <div>
-            © {new Date().getFullYear()}{" "}
-            <a
-              href="https://gen-6-software-pvt-ltd.onrender.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Gen6 Software
-            </a>. All rights reserved
-          </div>
 
-          <div>
-            <Link to="/privacy-policy">Privacy</Link> ·{" "}
-            <Link to="/terms">Terms</Link> ·{" "}
-            <span>Cookies</span>
-          </div>
+          <p>
+            © {new Date().getFullYear()} Gen6 Software Pvt. Ltd.
+            All Rights Reserved.
+          </p>
+
         </div>
 
       </div>

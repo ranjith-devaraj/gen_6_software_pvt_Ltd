@@ -431,56 +431,68 @@ const filteredProjects =
 </section>
 
         {/* TEAM */}
-<section className="section-alt" id="team">
-  <div className="container">
-    
-    {/* Section Header */}
-    <div className="section-head">
-      <span className="eyebrow">Our Team</span>
-      <h2 className="section-title">Meet the people behind Gen6</h2>
-      <p className="section-subtitle">
-        A senior team of builders, designers, and strategists.
-      </p>
-    </div>
+      <section className="section-alt" id="team">
+        <div className="container">
 
-    {/* Team Grid */}
-    <div className="team-grid">
-      {team.map((m, i) => (
-        <Reveal key={m.n} delay={i * 80}>
-          
-          <div className={`team-card ${m.featured ? "featured" : ""}`}>
-
-            {/* ✅ IMAGE */}
-            <div className="team-img">
-              <img src={m.img} alt={m.n} />
-            </div>
-
-            {/* ✅ ICONS BELOW IMAGE */}
-            <div className="team-overlay">
-              <a href="#"><Icon name="mail" size={16} /></a>
-              <a href="#"><Icon name="linkedin" size={16} /></a>
-            </div>
-
-            {/* ✅ ROLE */}
-            <span className="team-role">{m.role}</span>
-
-            {/* ✅ NAME */}
-            <h4>{m.n}</h4>
-
-            {/* ✅ TITLE */}
-            <p>{m.r}</p>
-
+          {/* ── Section Header ── */}
+          <div className="section-head">
+            <span className="eyebrow">Our Team</span>
+            <h2 className="section-title">Meet the people behind Gen6</h2>
+            <p className="section-subtitle">
+              A senior team of builders, designers, and strategists.
+            </p>
           </div>
 
-        </Reveal>
-      ))}
-    </div>
+          {/* ── Team Grid ── */}
+          <div className="team-grid">
+            {team.map((m, i) => (
+              <Reveal key={m.n} delay={i * 80}>
+                <div className={`team-card${m.featured ? " featured" : ""}`}>
 
-  </div>
-</section>
+                  {/* Circular Photo */}
+                  <div className="team-img">
+                    <img src={m.img} alt={m.n} />
+                  </div>
+
+                  {/* Role Badge */}
+                  <span className="team-role">{m.role}</span>
+
+                  {/* Name */}
+                  <h4>{m.n}</h4>
+
+                  {/* Designation */}
+                  <p className="team-designation">{m.r}</p>
+
+                  {/* Accent Divider */}
+                  <div className="team-divider" />
+
+                  {/* Social Icons */}
+                  <div className="team-socials">
+                    <a
+                      href="mailto:info@gen6software.in"
+                      aria-label="Send email"
+                    >
+                      <Icon name="mail" size={16} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn profile"
+                    >
+                      <Icon name="linkedin" size={16} />
+                    </a>
+                  </div>
+
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+        </div>
+      </section>
         {/* FAQ */}
         
-
 
 <section id="contact" className="contact-section">
   <div className="container">
