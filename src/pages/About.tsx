@@ -2,10 +2,66 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
 import { Icon } from "../components/Icon";
+import { Helmet } from "react-helmet-async";
 
 export default function About() {
   return (
     <>
+    <Helmet>
+  <title>About Gen6 Software | Web Development Company</title>
+
+  <meta
+    name="description"
+    content="Learn about Gen6 Software, our experienced team, mission, and expertise in web development, custom software, AI solutions, mobile apps, SEO, and digital transformation."
+  />
+
+  <link
+    rel="canonical"
+    href="https://www.gen6software.in/about"
+  />
+
+  <meta
+    property="og:title"
+    content="About Gen6 Software"
+  />
+
+  <meta
+    property="og:description"
+    content="Meet the team behind Gen6 Software and discover how we help businesses grow through innovative software solutions."
+  />
+
+  <meta
+    property="og:url"
+    content="https://www.gen6software.in/about"
+  />
+
+  <meta
+    property="og:image"
+    content="https://www.gen6software.in/about-img.webp"
+  />
+
+  <meta property="og:type" content="website" />
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="About Gen6 Software"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Learn more about Gen6 Software, our team, and our software development expertise."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://www.gen6software.in/about-img.webp"
+  />
+</Helmet>
       <Navbar />
 
       <section id="about">

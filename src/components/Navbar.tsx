@@ -42,94 +42,92 @@ export function Navbar() {
           </Link>
 
           {/* SERVICES DROPDOWN */}
-          <div
-            className="dropdown"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
+<div
+  className="dropdown"
+  onMouseEnter={() => setServicesOpen(true)}
+  onMouseLeave={() => setServicesOpen(false)}
+>
+  <Link
+    to="/services"
+    className="dropdown-toggle"
+    onClick={() => setOpen(false)}
+  >
+    Services ▾
+  </Link>
 
-            <Link
-              to="/services"
-              className="dropdown-toggle"
-              onClick={() => setOpen(false)}
-            >
-              Services ▾
-            </Link>
+  <div className={`dropdown-menu ${servicesOpen ? "show" : ""}`}>
 
-            <div className={`dropdown-menu ${servicesOpen ? "show" : ""}`}>
+    <Link
+      to="/services/web-dev"
+      onClick={() => setOpen(false)}
+    >
+      Web Development
+    </Link>
 
-              <Link
-                to="/service-details?id=web-dev"
-                onClick={() => setOpen(false)}
-              >
-                Web Development
-              </Link>
+    <Link
+      to="/services/software"
+      onClick={() => setOpen(false)}
+    >
+      Software Development
+    </Link>
 
-              <Link
-                to="/service-details?id=software"
-                onClick={() => setOpen(false)}
-              >
-                Software Development
-              </Link>
+    <Link
+      to="/services/custom-software"
+      onClick={() => setOpen(false)}
+    >
+      Custom Software
+    </Link>
 
-              <Link
-                to="/service-details?id=custom-software"
-                onClick={() => setOpen(false)}
-              >
-                Custom Software
-              </Link>
+    <Link
+      to="/services/ecommerce"
+      onClick={() => setOpen(false)}
+    >
+      E-Commerce Solutions
+    </Link>
 
-              <Link
-                to="/service-details?id=ecommerce"
-                onClick={() => setOpen(false)}
-              >
-                E-Commerce Solutions
-              </Link>
+    <Link
+      to="/services/seo"
+      onClick={() => setOpen(false)}
+    >
+      SEO Optimization
+    </Link>
 
-              <Link
-                to="/service-details?id=seo"
-                onClick={() => setOpen(false)}
-              >
-                SEO Optimization
-              </Link>
+    {/* SUB MENU */}
+    <div className="sub-dropdown">
 
-              {/* SUB MENU */}
-              <div className="sub-dropdown">
+      <span className="sub-title">
+        Design ▸
+      </span>
 
-                <span className="sub-title">
-                  Design ▸
-                </span>
+      <div className="sub-menu">
 
-                <div className="sub-menu">
+        <Link
+          to="/services/graphic-design"
+          onClick={() => setOpen(false)}
+        >
+          Graphic Design
+        </Link>
 
-                  <Link
-                    to="/service-details?id=graphic-design"
-                    onClick={() => setOpen(false)}
-                  >
-                    Graphic Design
-                  </Link>
+        <Link
+          to="/services/poster-design"
+          onClick={() => setOpen(false)}
+        >
+          Poster Design
+        </Link>
 
-                  <Link
-                    to="/service-details?id=poster-design"
-                    onClick={() => setOpen(false)}
-                  >
-                    Poster Design
-                  </Link>
+        <Link
+          to="/services/social-media"
+          onClick={() => setOpen(false)}
+        >
+          Social Media Design
+        </Link>
 
-                  <Link
-                    to="/service-details?id=social-media"
-                    onClick={() => setOpen(false)}
-                  >
-                    Social Media Design
-                  </Link>
+      </div>
 
-                </div>
+    </div>
 
-              </div>
-
-            </div>
-          </div>
-
+  </div>
+</div>
           <Link to="/contact" onClick={() => setOpen(false)}>
             Contact
           </Link>

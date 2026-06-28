@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
+import { Helmet } from "react-helmet-async";
 
 const projects = [
   {
@@ -46,6 +47,71 @@ export default function Portfolio() {
 
   return (
     <>
+    <Helmet>
+  <title>Portfolio | Gen6 Software - Our Projects</title>
+
+  <meta
+    name="description"
+    content="Explore Gen6 Software's portfolio of web applications, AI solutions, mobile apps, UI/UX designs, and custom software projects built for businesses."
+  />
+
+  <link
+    rel="canonical"
+    href="https://www.gen6software.in/portfolio"
+  />
+
+  <meta
+    property="og:title"
+    content="Portfolio | Gen6 Software"
+  />
+
+  <meta
+    property="og:description"
+    content="Discover our latest web development, AI, mobile app, and software development projects."
+  />
+
+  <meta
+    property="og:url"
+    content="https://www.gen6software.in/portfolio"
+  />
+
+  <meta
+    property="og:image"
+    content="https://www.gen6software.in/logo.png"
+  />
+
+  <meta property="og:type" content="website" />
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Portfolio | Gen6 Software"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Explore our portfolio of web development, AI, and software solutions."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://www.gen6software.in/logo.png"
+  />
+  <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Gen6 Software Portfolio",
+    url: "https://www.gen6software.in/portfolio",
+    description:
+      "Portfolio showcasing web development, AI, mobile app, and software development projects by Gen6 Software."
+  })}
+</script>
+</Helmet>
       <Navbar />
 
       <section id="portfolio">

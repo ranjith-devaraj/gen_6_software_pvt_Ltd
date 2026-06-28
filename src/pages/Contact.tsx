@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Icon } from "../components/Icon";
+import { Helmet } from "react-helmet-async";
 
 const faqs = [
   {
@@ -54,132 +55,209 @@ export default function Contact() {
 
   return (
     <>
+    <Helmet>
+  <title>Contact Gen6 Software | Get a Free Consultation</title>
+
+  <meta
+    name="description"
+    content="Contact Gen6 Software for web development, custom software, AI solutions, mobile app development, SEO, and digital marketing services. Get a free consultation today."
+  />
+
+  <link
+    rel="canonical"
+    href="https://www.gen6software.in/contact"
+  />
+
+  <meta
+    property="og:title"
+    content="Contact Gen6 Software"
+  />
+
+  <meta
+    property="og:description"
+    content="Have a project in mind? Contact Gen6 Software for a free consultation and expert software development services."
+  />
+
+  <meta
+    property="og:url"
+    content="https://www.gen6software.in/contact"
+  />
+
+  <meta
+    property="og:image"
+    content="https://www.gen6software.in/logo.png"
+  />
+
+  <meta property="og:type" content="website" />
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Contact Gen6 Software"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Get in touch with Gen6 Software for web development, AI, and software solutions."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://www.gen6software.in/logo.png"
+  />
+</Helmet>
       <Navbar />
 
-      <section id="contact" className="contact-section">
-        <div className="container">
+<section id="contact" className="contact-section">
+  <div className="container">
 
-          <div className="section-head center">
-            <span className="eyebrow">Contact Us</span>
+    <div className="section-head center">
+      <span className="eyebrow">Contact Us</span>
 
-            <h2 className="section-title">
-              Let's Build Your Next Big Idea 🚀
-            </h2>
+      <h2 className="section-title">
+        Let's Build Your Next Big Idea 🚀
+      </h2>
 
-            <p className="section-subtitle">
-              Have a project in mind? Tell us your requirements and we'll get back to you within 24 hours.
-            </p>
+      <p className="section-subtitle">
+        Have a project in mind? Tell us your requirements and we'll get back to you within 24 hours.
+      </p>
+    </div>
+
+    <div className="contact-grid">
+
+      {/* Contact Info */}
+      <div className="contact-info">
+
+        {/* Email */}
+        <div className="contact-card">
+          <div className="ic">
+            <Icon name="mail" size={20} />
           </div>
 
-          <div className="contact-grid">
+          <div>
+            <h5>Email</h5>
 
-            <div className="contact-info">
-
-              <div className="contact-card">
-                <div className="ic">
-                  <Icon name="mail" size={20} />
-                </div>
-
-                <div>
-                  <h5>Email</h5>
-                  <p>gen6software@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="contact-card">
-                <div className="ic">
-                  <Icon name="phone" size={20} />
-                </div>
-
-                <div>
-                  <h5>Call / WhatsApp</h5>
-                  <p>+91 84282 54205</p>
-                </div>
-              </div>
-
-              <div className="contact-card">
-                <div className="ic">
-                  <Icon name="pin" size={20} />
-                </div>
-
-                <div>
-                  <h5>Location</h5>
-                  <p>Erode, Tamil Nadu, India</p>
-                </div>
-              </div>
-
-              <div className="contact-card highlight">
-                <h4>🔥 Free Consultation</h4>
-                <p>
-                  Get expert guidance for your project absolutely free.
-                </p>
-              </div>
-
-            </div>
-
-            <form
-              className="contact-form"
-              onSubmit={handleSubmit}
+            <a
+              href="mailto:gen6software@gmail.com"
+              className="contact-link"
             >
+              gen6software@gmail.com
+            </a>
+          </div>
+        </div>
 
-              <div className="form-row">
+        {/* Phone */}
+        <div className="contact-card">
+          <div className="ic">
+            <Icon name="phone" size={20} />
+          </div>
 
-                <div className="form-group">
-                  <label>Full Name</label>
-                  <input
-                    name="name"
-                    required
-                    placeholder="Ranjith Kumar"
-                  />
-                </div>
+          <div>
+            <h5>Call / WhatsApp</h5>
 
-                <div className="form-group">
-                  <label>Phone Number</label>
-                  <input
-                    name="phone"
-                    required
-                    placeholder="+91 98XXXXXXXX"
-                  />
-                </div>
+            <a
+              href="https://wa.me/918428254205"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              +91 84282 54205
+            </a>
+          </div>
+        </div>
 
-              </div>
+        {/* Location */}
+        <div className="contact-card">
+          <div className="ic">
+            <Icon name="pin" size={20} />
+          </div>
 
-              <div className="form-group">
-                <label>Email</label>
+          <div>
+            <h5>Location</h5>
+            <p>Komarapalayam, Namakkal, Tamil Nadu, India</p>
+          </div>
+        </div>
 
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="you@gmail.com"
-                />
-              </div>
+        {/* Free Consultation */}
+        <div className="contact-card highlight">
+          <h4>🔥 Free Consultation</h4>
 
-              <div className="form-group">
-                <label>Project Details</label>
+          <p>
+            Get expert guidance for your project absolutely free.
+          </p>
+        </div>
 
-                <textarea
-                  name="message"
-                  required
-                  placeholder="Tell us about your project..."
-                />
-              </div>
+      </div>
 
-              <button
-                type="submit"
-                className="btn btn-primary full"
-              >
-                Send Message
-                <Icon name="arrow" size={16} />
-              </button>
+      {/* Contact Form */}
+      <form
+        className="contact-form"
+        onSubmit={handleSubmit}
+      >
 
-            </form>
+        <div className="form-row">
 
+          <div className="form-group">
+            <label>Full Name</label>
+
+            <input
+              name="name"
+              required
+              placeholder="Ranjith Kumar"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Phone Number</label>
+
+            <input
+              name="phone"
+              required
+              placeholder="+91 98XXXXXXXX"
+            />
           </div>
 
         </div>
-      </section>
 
+        <div className="form-group">
+          <label>Email</label>
+
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="you@gmail.com"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Project Details</label>
+
+          <textarea
+            name="message"
+            required
+            placeholder="Tell us about your project..."
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="btn btn-primary full"
+        >
+          Send Message
+          <Icon name="arrow" size={16} />
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
       <FAQ />
 
       <Footer />

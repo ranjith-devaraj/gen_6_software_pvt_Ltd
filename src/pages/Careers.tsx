@@ -1,5 +1,6 @@
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { Helmet } from "react-helmet-async";
 
 /*
 ==================================================
@@ -37,6 +38,61 @@ const jobs: {
 export default function Careers() {
   return (
     <>
+  <Helmet>
+    <title>Careers at Gen6 Software | Join Our Team</title>
+
+    <meta
+      name="description"
+      content="Explore career opportunities at Gen6 Software. Join our team of developers, designers, and innovators building modern web, AI, and software solutions."
+    />
+
+    <link
+      rel="canonical"
+      href="https://www.gen6software.in/careers"
+    />
+
+    <meta
+      property="og:title"
+      content="Careers at Gen6 Software"
+    />
+
+    <meta
+      property="og:description"
+      content="Join Gen6 Software and build innovative web applications, AI solutions, and modern digital products."
+    />
+
+    <meta
+      property="og:url"
+      content="https://www.gen6software.in/careers"
+    />
+
+    <meta
+      property="og:image"
+      content="https://www.gen6software.in/logo.png"
+    />
+
+    <meta property="og:type" content="website" />
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content="Careers at Gen6 Software"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Explore exciting career opportunities at Gen6 Software."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://www.gen6software.in/logo.png"
+    />
+  </Helmet>
       <Navbar />
 
       {/* Hero */}

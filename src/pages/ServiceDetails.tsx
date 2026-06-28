@@ -3,7 +3,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Icon } from "../components/Icon";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -14,14 +14,15 @@ type Service = {
 };
 
 function ServiceDetails() {
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const id = params.get("id");
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
-const navigate = useNavigate();
+
+  const navigate = useNavigate();
+
+  
 const serviceData: Record<string, Service> = {
   "web-dev": {
     title: "Web Development",
@@ -84,7 +85,136 @@ const serviceData: Record<string, Service> = {
 
   return (
     <>
-      {/* 🔥 SEO */}
+<Helmet>
+  {/* Title */}
+  <title>{`${service.title} | Gen6 Software`}</title>
+
+  {/* Basic SEO */}
+  <meta
+    name="description"
+    content={`${service.title} by Gen6 Software. ${service.desc}`}
+  />
+
+  <meta
+    name="keywords"
+    content={`${service.title}, Web Development, Software Development, Custom Software, SEO, AI Solutions, Mobile App Development, UI/UX Design, E-Commerce, Gen6 Software`}
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <meta
+    name="author"
+    content="Gen6 Software Pvt Ltd"
+  />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
+  <meta
+    name="theme-color"
+    content="#0F172A"
+  />
+
+  {/* Canonical */}
+  <link
+    rel="canonical"
+    href={`https://www.gen6software.in/service-details?id=${id}`}
+  />
+
+  {/* Open Graph */}
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:site_name"
+    content="Gen6 Software"
+  />
+
+  <meta
+    property="og:title"
+    content={`${service.title} | Gen6 Software`}
+  />
+
+  <meta
+    property="og:description"
+    content={service.desc}
+  />
+
+  <meta
+    property="og:url"
+    content={`https://www.gen6software.in/service-details?id=${id}`}
+  />
+
+  <meta
+    property="og:image"
+    content={
+      service.img.startsWith("http")
+        ? service.img
+        : `https://www.gen6software.in${service.img}`
+    }
+  />
+
+  {/* Twitter */}
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content={`${service.title} | Gen6 Software`}
+  />
+
+  <meta
+    name="twitter:description"
+    content={service.desc}
+  />
+
+  <meta
+    name="twitter:image"
+    content={
+      service.img.startsWith("http")
+        ? service.img
+        : `https://www.gen6software.in${service.img}`
+    }
+  />
+
+  <meta
+    name="twitter:url"
+    content={`https://www.gen6software.in/service-details?id=${id}`}
+  />
+
+  {/* Structured Data */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: service.title,
+      description: service.desc,
+      image: service.img.startsWith("http")
+        ? service.img
+        : `https://www.gen6software.in${service.img}`,
+      provider: {
+        "@type": "Organization",
+        name: "Gen6 Software",
+        url: "https://www.gen6software.in",
+        logo: "https://www.gen6software.in/logo.png",
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+      url: `https://www.gen6software.in/service-details?id=${id}`,
+    })}
+  </script>
+</Helmet>      {/* 🔥 SEO */}
       <Helmet>
         <title>{service.title} | Gen6 Software</title>
 
@@ -188,23 +318,23 @@ const serviceData: Record<string, Service> = {
           <div className="service-sidebar">
 
             {/* SERVICES */}
-            <div className="card services-card">
-              <h4>All Services</h4>
+<div className="card services-card">
+  <h4>All Services</h4>
 
-              <ul>
-                {Object.keys(serviceData).map((key) => (
-                  <li key={key} className={id === key ? "active" : ""}>
-                    <Link
-                      to={`/service-details?id=${key}`}
-                      onClick={() => window.scrollTo(0, 0)}
-                    >
-                      <span>{serviceData[key].title}</span>
-                      <span className="arrow">→</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+  <ul>
+    {Object.keys(serviceData).map((key) => (
+      <li key={key} className={id === key ? "active" : ""}>
+        <Link
+          to={`/services/${key}`}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <span>{serviceData[key].title}</span>
+          <span className="arrow">→</span>
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
             {/* CTA */}
             <div className="card cta-card">
@@ -213,7 +343,7 @@ const serviceData: Record<string, Service> = {
 
 <button
   className="btn btn-primary full"
-  onClick={() => navigate("/#contact")}
+  onClick={() => navigate("/contact")}
 >
   Contact Us →
 </button>
